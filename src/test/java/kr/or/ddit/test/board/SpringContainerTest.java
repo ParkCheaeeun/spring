@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.test.board.dao.IBoardDao;
 import kr.or.ddit.test.board.service.IBoardService;
+import kr.or.ddit.test.ioc.CollectionBean;
 
 
 //스프링 환경을 이용한 junit 테스트
@@ -78,6 +79,10 @@ public class SpringContainerTest {
 	@Resource(name="boardDaoP")
 	private IBoardDao boardDaoP2;
 	
+	@Resource(name="collectionBean")
+	private CollectionBean collectionBean;
+	
+	
 	/**
 	* Method : springBeanScopTest
 	* 작성자 : PC-09
@@ -111,6 +116,30 @@ public class SpringContainerTest {
 		logger.debug("boardDaoP : {}", boardDaoP);
 		logger.debug("boardDaoP2 : {}", boardDaoP2);
 		assertNotEquals(boardDaoP, boardDaoP2);
+	}
+	
+	/**
+	* Method : collectionBeanTest
+	* 작성자 : PC-09
+	* 변경이력 :
+	* Method 설명 : collection 객체의 동적 생성 -주입
+	*/
+	@Test
+	public void collectionBeanTest() {
+		/***Given***/
+		
+
+		/***When***/
+
+		/***Then***/
+		logger.debug("collectionBean.getList() : {}", collectionBean.getList());
+		logger.debug("collectionBean.getSet() : {}", collectionBean.getSet());
+		logger.debug("collectionBean.getMap() : {}", collectionBean.getMap());
+		logger.debug("collectionBean.getProperties() : {}", collectionBean.getProperties());
+		assertNotNull( collectionBean.getList());
+		assertNotNull( collectionBean.getSet());
+		assertNotNull( collectionBean.getMap());
+		assertNotNull( collectionBean.getProperties());
 	}
 	
 }
