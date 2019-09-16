@@ -3,6 +3,8 @@ package kr.or.ddit.user.repository;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -15,17 +17,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.common.model.Page;
+import kr.or.ddit.config.test.RootTestConfig;
 import kr.or.ddit.user.dao.IUserDao;
-import kr.or.ddit.user.dao.UserDao;
 import kr.or.ddit.user.model.User;
-import kr.or.ddit.user.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 									"classpath:kr/or/ddit/config/spring/context-root.xml",
-									"classpath:kr/or/ddit/config/spring/context-datasource.xml",
+									"classpath:kr/or/ddit/config/spring/context-datasource-test.xml",
 									"classpath:kr/or/ddit/config/spring/context-transaction.xml"})
-public class UserDaoTest {
+public class UserDaoTest extends RootTestConfig {
 	//userDao를 테스트 하기 위해 필요한거
 	//db 연결, 트랜잭션, dao
 	
@@ -34,6 +35,8 @@ public class UserDaoTest {
 	@Resource(name="userDao")
 	private IUserDao userDao;
 	
+	private String userId = "brownTest";
+
 	@Test
 	public void getUserListTest() {
 		/***Given***/
@@ -95,7 +98,7 @@ public class UserDaoTest {
 		
 		/***Then***/
 		assertEquals(10, userList.size());
-		assertEquals("xuserid19", userList.get(0).getUserId());
+		assertEquals("xuserid22", userList.get(0).getUserId());
 	}
 	
 	@Test
@@ -106,7 +109,7 @@ public class UserDaoTest {
 		int totalCnt = userDao.getUserTotalCount();
 		
 		/***Then***/
-		assertEquals(110, totalCnt);
+		assertEquals(105, totalCnt);
 	}
 	
 	@Test
@@ -124,13 +127,40 @@ public class UserDaoTest {
 	}
 	
 	@Test
+	   public void insertUserTest() {
+	      /***Given***/
+	      User user = new User();
+	      user.setUserId(userId);
+	      user.setUserNm("브라운테스트");
+	      user.setAlias("곰테스트");
+	      user.setPass("brownTest1234");
+	      user.setAddr1("대전광역시 중구 중앙로 중앙로 76");
+	      user.setAddr2("영민빌딩 2층 DDIT");
+	      user.setZipcode("34940");
+	         try {
+				user.setReg_dt(new SimpleDateFormat("yyyy-MM-dd").parse("2019-08-08"));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+	      
+	      /***When***/
+	      
+	      int insertCnt = userDao.insertUser(user);
+	      
+	      /***Then***/
+	      assertEquals(1, insertCnt);
+	   }
+	
+	@Test
 	public void userUpdateTest() {
 		/***Given***/
 		User userVO = new User();
-		userVO.setUserId("dddddd");
-		userVO.setUserNm("홍길동");
-		userVO.setAlias("가나다");
-		userVO.setPass("abc");
+		userVO.setUserId("xuserid1");
+		userVO.setUserNm("테스트");
+		userVO.setAlias("테스트별명");
+		userVO.setAddr1("대흥동");
+		userVO.setAddr2("영민빌딩");
+		userVO.setZipcode("34340");
 		
 		/***When***/
 		int updateCnt = userDao.updateUser(userVO);

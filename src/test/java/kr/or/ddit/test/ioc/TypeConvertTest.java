@@ -31,7 +31,7 @@ public class TypeConvertTest {
 	public void dateTypeInjectiontTest() {
 		/***Given***/
 		
-
+		
 		/***When***/
 		logger.debug("user : {}", user);
 		
