@@ -1,4 +1,4 @@
-package kr.or.ddit.prod;
+package kr.or.ddit.prod.dao;
 
 import static org.junit.Assert.*;
 

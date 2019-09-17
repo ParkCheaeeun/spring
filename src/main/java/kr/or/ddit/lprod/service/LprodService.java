@@ -13,7 +13,7 @@ import kr.or.ddit.lprod.dao.ILprodDao;
 import kr.or.ddit.lprod.model.LprodVo;
 
 @Service
-public class LprodServiceImpl implements ILprodService {
+public class LprodService implements ILprodService {
 	
 	@Resource(name="lprodDaoImpl")
 	private ILprodDao dao;

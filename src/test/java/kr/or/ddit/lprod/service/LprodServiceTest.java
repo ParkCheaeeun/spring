@@ -1,4 +1,4 @@
-package kr.or.ddit.lprod;
+package kr.or.ddit.lprod.service;
 
 import static org.junit.Assert.*;
 
@@ -15,7 +15,7 @@ import kr.or.ddit.common.model.Page;
 import kr.or.ddit.config.test.RootTestConfig;
 import kr.or.ddit.lprod.model.LprodVo;
 import kr.or.ddit.lprod.service.ILprodService;
-import kr.or.ddit.lprod.service.LprodServiceImpl;
+import kr.or.ddit.lprod.service.LprodService;
 
 public class LprodServiceTest extends RootTestConfig {
 	
