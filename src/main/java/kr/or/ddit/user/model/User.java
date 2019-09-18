@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
+import javax.validation.constraints.NotNull;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,8 @@ public class User implements HttpSessionBindingListener{
 	
 	private String userId;
 	private String userNm;
+	
+	@NotNull
 	private String pass;		//사용자 비밀번호
 	private String alias;		//별명
 	private String addr1;		//주소1
