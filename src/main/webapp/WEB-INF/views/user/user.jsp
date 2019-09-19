@@ -34,7 +34,7 @@
 <!-- header -->
 <%@ include file="/WEB-INF/views/commonJsp/header.jsp" %>
 
-<form action="${cp }/modify" id="frm">
+<form action="${cp }/user/modify" id="frm">
 	<input type="hidden" value="${user.userId}" name="userId">
 </form>
 
@@ -52,7 +52,7 @@
 						
 						<div class="col-sm-10">
 							<%-- <img alt="" src="/jsp${user.realfilename2}"> --%>
-							<img src="${cp }/userPicture?userId=${user.userId}"/>
+							<img src="${cp }/user/userPicture?userId=${user.userId}"/>
 						</div>
 					</div>
 					<div class="form-group">

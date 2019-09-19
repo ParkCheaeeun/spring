@@ -50,6 +50,7 @@
   <update id="updateUser" parameterType="user">
   	update users 
   	   set userNm = #{userNm},
+  	   	   pass = #{pass},
   	   	   alias = #{alias, jdbcType=VARCHAR}, 
   	   	   reg_dt = #{reg_dt, jdbcType=DATE}, 
 		   addr1 = #{addr1, jdbcType=VARCHAR},

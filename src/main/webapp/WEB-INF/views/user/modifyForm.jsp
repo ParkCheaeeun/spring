@@ -65,7 +65,7 @@ $(document).ready(function(){
          </div>
 
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <form class="form-horizontal" id="frm" role="form" action="${cp }/modify"
+            <form class="form-horizontal" id="frm" role="form" action="${cp }/user/modify"
              method="post" enctype="multipart/form-data">
             	
             	<div class="form-group">

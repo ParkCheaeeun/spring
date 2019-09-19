@@ -78,6 +78,9 @@ public class User implements HttpSessionBindingListener{
 	}
 
 	public String getRealfilename() {
+		if(realfilename == null) {
+			return "";
+		}
 		return realfilename;
 	}
 

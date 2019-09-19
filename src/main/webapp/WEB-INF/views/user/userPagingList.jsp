@@ -54,7 +54,7 @@ $(document).ready(function(){
 </head>
 
 <body>
-<form action="${cp }/user" id="frm">
+<form action="${cp }/user/user" id="frm">
 	<input type="hidden" id="userId" name="userId">
 </form>
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
 			</table>
 		</div>
 
-		<a href="${cp }/userForm" class="btn btn-default pull-right">사용자 등록</a>
+		<a href="${cp }/user/userForm" class="btn btn-default pull-right">사용자 등록</a>
 
 		<div class="text-center">
 			<ul class="pagination">
