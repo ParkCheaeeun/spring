@@ -13,6 +13,8 @@
 		<span class="sr-only">(current)</span></a></li>
 	<li class="active"><a href="${cp }/user/userPagingList">사용자페이징리스트 
 		<span class="sr-only">(current)</span></a></li>
+	<li class="active"><a href="${cp }/user/userPagingListAjaxView">사용자페이징리스트 (ajax)
+		<span class="sr-only">(current)</span></a></li>
 	<li class="active"><a href="#">사용자</a></li>
 	
 </ul>
