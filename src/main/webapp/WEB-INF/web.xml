@@ -20,8 +20,16 @@
 		<param-value>classpath:kr/or/ddit/config/spring/context-root.xml
 					classpath:kr/or/ddit/config/spring/context-datasource.xml
 					classpath:kr/or/ddit/config/spring/context-transaction.xml</param-value>
+<!-- 		<param-value>kr.or.ddit.config.RootConfig -->
+<!-- 					 kr.or.ddit.config.DatasourceConfig -->
+<!-- 		</param-value> -->
 	</context-param>
-
+	
+<!-- 	<context-param> -->
+<!-- 		<param-name>contextClass</param-name> -->
+<!-- 		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value> -->
+<!-- 	</context-param> -->
+	
 	<!-- Bootstraps the root web application context before servlet initialization -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -38,10 +46,18 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:kr/or/ddit/config/spring/servlet-context.xml
-						 <!-- classpath:kr/or/ddit/config/spring/context-interceptors.xml -->
+			<param-value><!-- kr.or.ddit.config.ServletConfig
+						 kr.or.ddit.config.InterceptorConfig -->
+						 classpath:kr/or/ddit/config/spring/context-interceptors.xml
+						 classpath:kr/or/ddit/config/spring/servlet-context.xml
 			</param-value>
 		</init-param>
+		
+<!-- 		<init-param> -->
+<!-- 			<param-name>contextClass</param-name> -->
+<!-- 			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value> -->
+<!-- 		</init-param> -->
+		
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 

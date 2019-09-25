@@ -21,11 +21,6 @@ import kr.or.ddit.config.test.RootTestConfig;
 import kr.or.ddit.user.dao.IUserDao;
 import kr.or.ddit.user.model.User;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-									"classpath:kr/or/ddit/config/spring/context-root.xml",
-									"classpath:kr/or/ddit/config/spring/context-datasource-test.xml",
-									"classpath:kr/or/ddit/config/spring/context-transaction.xml"})
 public class UserDaoTest extends RootTestConfig {
 	//userDao를 테스트 하기 위해 필요한거
 	//db 연결, 트랜잭션, dao
@@ -156,6 +151,7 @@ public class UserDaoTest extends RootTestConfig {
 		/***Given***/
 		User userVO = new User();
 		userVO.setUserId("xuserid1");
+		userVO.setPass("123");
 		userVO.setUserNm("테스트");
 		userVO.setAlias("테스트별명");
 		userVO.setAddr1("대흥동");

@@ -19,7 +19,7 @@ import kr.or.ddit.lprod.service.LprodService;
 
 public class LprodServiceTest extends RootTestConfig {
 	
-	@Resource(name="lprodServiceImpl")
+	@Resource(name="lprodService")
 	ILprodService service;
 	
 	@Test
